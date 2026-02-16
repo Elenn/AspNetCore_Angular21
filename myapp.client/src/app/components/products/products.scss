@@ -1,0 +1,418 @@
+/* Star Rating Styles */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  color: #e0e0e0; /* Default gray color for empty stars */
+  transition: color 0.2s ease;
+}
+
+.star.filled {
+  color: #ffc107; /* Bootstrap warning yellow */
+}
+
+.star.half-filled {
+  background: linear-gradient(90deg, #ffc107 50%, #e0e0e0 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffc107;
+}
+
+.star.empty {
+  color: #e0e0e0;
+}
+
+/* Alternative approach for half stars using pseudo-elements */
+.star.half-filled::before {
+  content: '\f005'; /* FontAwesome star */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #ffc107;
+}
+
+
+/* Rating text styling */
+.rating-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+/* Product card improvements */
+.product-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #dee2e6;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Product image styling */
+.product-image {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* Badge styling improvements */
+.badge {
+  font-size: 0.7em;
+  padding: 0.25em 0.5em;
+}
+
+/* Button hover effects */
+.btn-primary.btn-sm:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Star rating container spacing */
+.star-rating .star {
+  margin-right: 2px;
+}
+
+.star-rating .star:last-child {
+  margin-right: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .star {
+    font-size: 12px;
+  }
+
+  .rating-text {
+    font-size: 11px;
+  }
+}
+
+.product-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.clickable-image {
+  transition: transform 0.3s;
+}
+
+.image-container:hover .clickable-image {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-overlay i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.clickable-title {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.clickable-title:hover {
+  color: #007bff;
+}
+
+.btn-group .btn {
+  border-radius: 0.375rem;
+}
+
+.btn-group .btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group .btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.product-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: 1px solid #dee2e6;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.product-image {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* Clickable area styling */
+.clickable-area {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-overlay i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.image-overlay span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.clickable-title {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.clickable-title:hover {
+  color: #007bff;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.3;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.star-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  font-size: 0.875rem;
+  color: #ddd;
+  transition: color 0.2s;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.star.half-filled {
+  color: #ffc107;
+  position: relative;
+}
+
+.star.half-filled::after {
+  content: '\f005';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #ffc107;
+}
+
+.star.empty {
+  color: #e9ecef;
+}
+
+.rating-text {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 0.375rem 0.75rem;
+}
+
+.btn-sm {
+  font-size: 0.8rem;
+  padding: 0.375rem 0.75rem;
+  z-index: 10;
+  position: relative;
+}
+
+/* Prevent card click when button is clicked */
+.btn-sm:hover {
+  transform: scale(1.05);
+}
+
+/* Filter section styling */
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.form-select, .form-control {
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select:focus, .form-control:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.btn-outline-secondary {
+  color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+/* Active filters badges */
+.badge.bg-primary {
+  background-color: #0d6efd !important;
+}
+
+.badge.bg-info {
+  background-color: #0dcaf0 !important;
+}
+
+.badge.bg-success {
+  background-color: #198754 !important;
+}
+
+.badge.bg-warning {
+  background-color: #ffc107 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .col-md-3, .col-md-2 {
+    margin-bottom: 1rem;
+  }
+
+  .d-flex.justify-content-between {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .d-flex.justify-content-between > * {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Loading spinner styling */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* No results styling */
+.alert.text-center i {
+  color: #0dcaf0;
+}
+
+/* Card hover effects for better UX */
+.card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.position-relative {
+  overflow: hidden;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* Success message styling */
+.alert-success.position-fixed {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

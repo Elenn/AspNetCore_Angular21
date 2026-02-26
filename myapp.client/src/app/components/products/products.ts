@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductFilterCriteria } from '../../pipes/product-filter-pipe';
 import { ProductsService } from '../../services/products.service';
+import { CartService } from '../../services/cart.service';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Product } from '../../models/product';
@@ -33,7 +34,7 @@ export class ProductsComponent implements OnInit {
     maxPrice: null
   };
 
-  constructor(private productsService: ProductsService, private cdr: ChangeDetectorRef) { }
+  constructor(private productsService: ProductsService, private cartService: CartService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     console.log('ProductsComponent initialized');
@@ -119,5 +120,19 @@ export class ProductsComponent implements OnInit {
   getImageUrl(product: Product): string {
     // return product.thumbnail || '/assets/images/placeholder.jpg';
     return product.thumbnail || '/placeholder.jpg';
+  }
+
+  addToCart(product: Product): void {
+    // Subscribe so the HTTP POST in CartService executes and we can handle success/error.
+    this.cartService.addToCart(product).subscribe({
+      next: () => {
+        console.log(`Added "${product.title}" to cart.`);
+        // ensure UI updates if needed
+        this.cdr.detectChanges();
+      },
+      error: (err) => {
+        console.error('Error adding to cart:', err);
+      }
+    });
   }
 }

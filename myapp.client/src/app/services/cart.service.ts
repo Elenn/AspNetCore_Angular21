@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Product, CartItem } from '../models/product';
 
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError, map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,12 +14,13 @@ export class CartService {
   private cartItems: CartItem[] = [];
   private cartSubject = new BehaviorSubject<CartItem[]>([]);
   public cart$ = this.cartSubject.asObservable();
+  private baseUrl = 'https://localhost:7026';
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.loadCartFromStorage();
   }
 
-  addToCart(product: Product, quantity: number = 1): void {
+  addToCart(product: Product, quantity: number = 1): Observable<void> {
     const existingItem = this.cartItems.find(item => item.product.id === product.id);
 
     if (existingItem) {
@@ -24,6 +30,13 @@ export class CartService {
     }
 
     this.updateCart();
+
+    const payload = {
+      id: product.id,
+      title: product.title,
+    };
+
+    return this.http.post<void>(`${this.baseUrl}/api/Cart/add`, payload);
   }
 
   removeFromCart(productId: number): void {

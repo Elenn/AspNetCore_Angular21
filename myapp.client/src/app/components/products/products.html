@@ -83,6 +83,7 @@
               </div>
               <button type="button"
                       class="btn btn-primary btn-sm"
+                      (click)="addToCart(product); $event.stopPropagation()"
                       >
                 <i class="fas fa-cart-plus me-1"></i>
                 {{'addToCart'}}

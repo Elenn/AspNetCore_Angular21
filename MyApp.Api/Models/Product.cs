@@ -15,3 +15,9 @@ public class Product
     public string thumbnail { get; set; } = string.Empty;
     public decimal price { get; set; }
 }
+
+public class CartPayload
+{
+    public int id { get; set; }
+    public string title { get; set; } = string.Empty; 
+}

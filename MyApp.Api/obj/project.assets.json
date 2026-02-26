@@ -5177,11 +5177,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\web\\CSharp\\Projects\\tempMy\\MyApp.Api\\MyApp.Api.csproj",
+      "projectUniqueName": "C:\\web\\GitProjects\\AspNetCore_Angular21\\MyApp.Api\\MyApp.Api.csproj",
       "projectName": "MyApp.Api",
-      "projectPath": "C:\\web\\CSharp\\Projects\\tempMy\\MyApp.Api\\MyApp.Api.csproj",
+      "projectPath": "C:\\web\\GitProjects\\AspNetCore_Angular21\\MyApp.Api\\MyApp.Api.csproj",
       "packagesPath": "C:\\Users\\elena\\.nuget\\packages\\",
-      "outputPath": "C:\\web\\CSharp\\Projects\\tempMy\\MyApp.Api\\obj\\",
+      "outputPath": "C:\\web\\GitProjects\\AspNetCore_Angular21\\MyApp.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

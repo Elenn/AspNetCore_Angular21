@@ -16,6 +16,8 @@ ng serve
 
 open swagger: https://localhost:7026/swagger/index.html -> Products -> POST
 
+![Alt text](https://github.com/Elenn/AspNetCore_Angular21/blob/main/myapp.client/public/screenShotProducts.png)
+
 add data to databse:
 
 { "id": 0, "title": "Essence Mascara Lash Princess", "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
